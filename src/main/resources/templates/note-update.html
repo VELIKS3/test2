@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>Update note</title>
+<style>
+    .my-input {
+        width:350px;
+    }
+    body {
+        background: linear-gradient(to top, #55EFCB 0%, #5BCAFF 100%);
+        height: 100%;
+    }
+    .b2 {
+        text-decoration: none;
+        display: inline-block;
+        padding: 20px 30px;
+        margin: 10px 20px;
+        position: center;
+        color: black;
+        border: 1px solid #ff7f50;
+        background: none;
+        font-weight: 600;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    .b2:hover {
+        background: linear-gradient(to top, yellow 0%, #d23eea 100%);
+        box-shadow: 0 15px 20px red;
+        color: white;
+        transform: translateY(-7px);
+    }
+
+</style>
+</head>
+<body style="background-color: #fdefc7">
+<form action="#" th:action="@{/note-update}" th:object="${note}" method="post">
+
+    <label for="title">Краткое название:</label>
+    <input type="text" th:field="*{title}" id="title" placeholder="Введите название"><Br>
+    <br/>
+    <label for="content">Описание:</label>
+    <input type="text" class="my-input" th:field="*{content}" id="content" placeholder="Введите описание"><Br>
+    <br/>
+    <label for="date">Дата:</label>
+    <input type="text" th:field="*{date}" id="date" placeholder="Введите дату"><Br>
+    <br/>
+    <input type="submit"  class="b2" value="Изменить">
+</form>
+</body>
+</html>
